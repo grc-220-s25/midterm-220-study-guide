@@ -54,6 +54,19 @@ public class MidtermPractice {
         System.out.println(Arrays.toString(arr3));
         System.out.println("If all devided by 3: " + allDivisibleBy3(arr3));
 
+
+        /**
+         Finding if word started with letter a
+         */
+        List<String> list3 = List.of("apple", "apricot", "avocado");
+        List<String> list4 = List.of("apple", "banana", "avocado");
+
+        System.out.println(list3);
+        System.out.println("If word started with letter a: " + allStartWithA(list3));
+
+        System.out.println(list4);
+        System.out.println("If word started with letter a: " + allStartWithA(list4));
+
     }
 
     /**
@@ -149,7 +162,13 @@ public class MidtermPractice {
      * Example: input: ["apple", "banana", "avocado"] -> output: false
      */
     public static boolean allStartWithA(List<String> list) {
-        return false;
+
+        for (String word : list){
+            if (!word.startsWith("a")){
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
