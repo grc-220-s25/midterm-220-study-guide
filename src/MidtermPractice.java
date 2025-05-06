@@ -13,15 +13,18 @@ public class MidtermPractice {
         // String result = findLongestWord(word);
         // System.out.println("The Longest word is " + result);
         /**************/
-        Map<String, Integer> myMap= new HashMap<>();
-        myMap.put("why", 7);
-        myMap.put("hello",8);
-        myMap.put("Kingston",10);
-        myMap.put("Amazing",99);
-        myMap.put("Education",25);
-        int result = countLongWords(myMap);
-        System.out.println("Words longer than 5 letters " + result );
-
+        // Map<String, Integer> myMap= new HashMap<>();
+        // myMap.put("why", 7);
+        // myMap.put("hello",8);
+        // myMap.put("Kingston",10);
+        // myMap.put("Amazing",99);
+        // myMap.put("Education",25);
+        // int result = countLongWords(myMap);
+        // System.out.println("Words longer than 5 letters " + result );
+        /***************/
+        float [] nums = { 1.5f, 3.5f, 2.0f, 1.0f};
+        double avg = findAverage(nums);
+        System.out.println("Average: " + avg);
         // After implementing a method, call it here with
         // some sample input and print the result to
         // check if it works. Fix any issues you find.
@@ -68,8 +71,19 @@ public class MidtermPractice {
      * Example: input: [1.5, 3.5, 2.0, 3.0] -> output: 2.5
      */
     public static double findAverage(float[] arr) {
-        return -1.0;
+        if (arr == null || arr.length == 0){
+        return 0.0;  
+    } 
+    float sum = 0;
+
+    for(float num : arr){
+        sum += num;
     }
+    return sum / arr.length;
+
+}
+    
+
 
     /**
      * Counts how many odd numbers there are in the values of a Map.
