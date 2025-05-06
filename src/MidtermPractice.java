@@ -41,6 +41,19 @@ public class MidtermPractice {
         Map<String, Integer> map2 = Map.of("a" , 7, "b" , 9 , "c" , 10);
         System.out.println(map2);
         System.out.println("Count odd numbers: " + countOddNumbers(map2));
+
+
+        /**
+         Finding all devided by 3
+         */
+        int[] arr2 = {3, 6, 9};
+        int[] arr3 = {3, 4, 5, 6};
+        System.out.println(Arrays.toString(arr2));
+        System.out.println("If all devided by 3: " + allDivisibleBy3(arr2));
+
+        System.out.println(Arrays.toString(arr3));
+        System.out.println("If all devided by 3: " + allDivisibleBy3(arr3));
+
     }
 
     /**
@@ -119,7 +132,13 @@ public class MidtermPractice {
      * Example 2: input: [3, 4, 6, 9] -> output: false
      */
     public static boolean allDivisibleBy3(int[] arr) {
-        return false;
+
+        for (int number : arr){
+            if (number % 3 != 0){
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
