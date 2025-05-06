@@ -33,6 +33,14 @@ public class MidtermPractice {
         
         System.out.println(Arrays.toString(arr));
         System.out.println("Average of float: " + findAverage(arr));
+
+
+        /**
+         Finding odd numbers
+        */
+        Map<String, Integer> map2 = Map.of("a" , 7, "b" , 9 , "c" , 10);
+        System.out.println(map2);
+        System.out.println("Count odd numbers: " + countOddNumbers(map2));
     }
 
     /**
@@ -93,7 +101,14 @@ public class MidtermPractice {
      * Example: input: {"a"=7, "x"=4, "z"=5} -> output: 2
      */
     public static int countOddNumbers(Map<String, Integer> map) {
-        return -1;
+
+        int count = 0;
+        for (Integer number : map.values()){
+            if (number % 2 != 0){
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
