@@ -1,16 +1,26 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class MidtermPractice {
 
     public static void main(String[] args) {
-        List<String> word = new ArrayList<>();
-        word.add("Banna");
-        word.add("Orange");
-        word.add("Mangooooooo");
-        String result = findLongestWord(word);
-        System.out.println("The Longest word is " + result);
+        // List<String> word = new ArrayList<>();
+        // word.add("Banna");
+        // word.add("Orange");
+        // word.add("Mangooooooo");
+        // String result = findLongestWord(word);
+        // System.out.println("The Longest word is " + result);
+        /**************/
+        Map<String, Integer> myMap= new HashMap<>();
+        myMap.put("why", 7);
+        myMap.put("hello",8);
+        myMap.put("Kingston",10);
+        myMap.put("Amazing",99);
+        myMap.put("Education",25);
+        int result = countLongWords(myMap);
+        System.out.println("Words longer than 5 letters " + result );
 
         // After implementing a method, call it here with
         // some sample input and print the result to
@@ -43,14 +53,12 @@ public class MidtermPractice {
      * Example: input: ["why"=7, "hello"=8, "brilliant"=99, "world"=15, "amazing"=17] -> output: 2
      */
     public static int countLongWords(Map<String, Integer> map) {
-        int count = 0; 
-        for (String word : map.keySet()){   
-            if (word.length()>5){
-                count++;
-            }
-
+       int count = 0; 
+       for(String word : map.keySet()){
+        if(word.length()>5){
+            count++;
         }
-        return count;
+       }return count;
     }
 
     /**
