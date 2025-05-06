@@ -1,3 +1,5 @@
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -7,6 +9,64 @@ public class MidtermPractice {
         // After implementing a method, call it here with
         // some sample input and print the result to
         // check if it works. Fix any issues you find.
+
+        /**
+         Finding longest words
+         */
+        List<String> list = List.of("My" , "Midterm" , "SDEV220");
+        System.out.println(list);
+        System.out.println("Longest word is: " + findLongestWord(list));
+
+
+        /**
+         Counting long words
+         */
+        Map<String, Integer> map = Map.of("why" ,7, "hello", 8, "brilliant", 99, "world", 15, "amazing", 17);
+        System.out.println(map);
+        System.out.println("Count long word: " + countLongWords(map));
+
+
+        /**
+         Finding float avg
+         */
+        float[] arr = {1.5f, 3.5f, 2.0f, 3.0f};
+        
+        System.out.println(Arrays.toString(arr));
+        System.out.println("Average of float: " + findAverage(arr));
+
+
+        /**
+         Finding odd numbers
+        */
+        Map<String, Integer> map2 = Map.of("a" , 7, "b" , 9 , "c" , 10);
+        System.out.println(map2);
+        System.out.println("Count odd numbers: " + countOddNumbers(map2));
+
+
+        /**
+         Finding all devided by 3
+         */
+        int[] arr2 = {3, 6, 9};
+        int[] arr3 = {3, 4, 5, 6};
+        System.out.println(Arrays.toString(arr2));
+        System.out.println("If all devided by 3: " + allDivisibleBy3(arr2));
+
+        System.out.println(Arrays.toString(arr3));
+        System.out.println("If all devided by 3: " + allDivisibleBy3(arr3));
+
+
+        /**
+         Finding if word started with letter a
+         */
+        List<String> list3 = List.of("apple", "apricot", "avocado");
+        List<String> list4 = List.of("apple", "banana", "avocado");
+
+        System.out.println(list3);
+        System.out.println("If word started with letter a: " + allStartWithA(list3));
+
+        System.out.println(list4);
+        System.out.println("If word started with letter a: " + allStartWithA(list4));
+
     }
 
     /**
@@ -16,7 +76,15 @@ public class MidtermPractice {
      * Example: input: ["apple", "banana", "kiwi"] -> output: "banana"
      */
     public static String findLongestWord(List<String> list) {
-        return "";
+
+        String longestWord = "";
+
+        for (String word : list){
+            if (word.length() > longestWord.length()){
+                longestWord = word;
+            }
+        }
+        return longestWord;
     }
 
     /**
@@ -26,7 +94,14 @@ public class MidtermPractice {
      * Example: input: ["why"=7, "hello"=8, "brilliant"=99, "world"=15, "amazing"=17] -> output: 2
      */
     public static int countLongWords(Map<String, Integer> map) {
-        return -1;
+
+        int count = 0;
+        for (String word : map.keySet()){
+            if (word.length() > 5){
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
@@ -36,7 +111,13 @@ public class MidtermPractice {
      * Example: input: [1.5, 3.5, 2.0, 3.0] -> output: 2.5
      */
     public static double findAverage(float[] arr) {
-        return -1.0;
+
+        double sum = 0;
+
+        for (double number: arr){
+            sum += number;
+        }
+        return sum / arr.length;
     }
 
     /**
@@ -46,7 +127,14 @@ public class MidtermPractice {
      * Example: input: {"a"=7, "x"=4, "z"=5} -> output: 2
      */
     public static int countOddNumbers(Map<String, Integer> map) {
-        return -1;
+
+        int count = 0;
+        for (Integer number : map.values()){
+            if (number % 2 != 0){
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
@@ -57,7 +145,13 @@ public class MidtermPractice {
      * Example 2: input: [3, 4, 6, 9] -> output: false
      */
     public static boolean allDivisibleBy3(int[] arr) {
-        return false;
+
+        for (int number : arr){
+            if (number % 3 != 0){
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
@@ -68,7 +162,13 @@ public class MidtermPractice {
      * Example: input: ["apple", "banana", "avocado"] -> output: false
      */
     public static boolean allStartWithA(List<String> list) {
-        return false;
+
+        for (String word : list){
+            if (!word.startsWith("a")){
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
