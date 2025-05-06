@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,14 +10,29 @@ public class MidtermPractice {
         // some sample input and print the result to
         // check if it works. Fix any issues you find.
 
+        /**
+         Finding longest words
+         */
         List<String> list = List.of("My" , "Midterm" , "SDEV220");
         System.out.println(list);
         System.out.println("Longest word is: " + findLongestWord(list));
 
 
+        /**
+         Counting long words
+         */
         Map<String, Integer> map = Map.of("why" ,7, "hello", 8, "brilliant", 99, "world", 15, "amazing", 17);
         System.out.println(map);
         System.out.println("Count long word: " + countLongWords(map));
+
+
+        /**
+         Finding float avg
+         */
+        float[] arr = {1.5f, 3.5f, 2.0f, 3.0f};
+        
+        System.out.println(Arrays.toString(arr));
+        System.out.println("Average of float: " + findAverage(arr));
     }
 
     /**
@@ -61,7 +77,13 @@ public class MidtermPractice {
      * Example: input: [1.5, 3.5, 2.0, 3.0] -> output: 2.5
      */
     public static double findAverage(float[] arr) {
-        return -1.0;
+
+        double sum = 0;
+
+        for (double number: arr){
+            sum += number;
+        }
+        return sum / arr.length;
     }
 
     /**
