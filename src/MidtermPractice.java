@@ -22,9 +22,18 @@ public class MidtermPractice {
         // int result = countLongWords(myMap);
         // System.out.println("Words longer than 5 letters " + result );
         /***************/
-        float [] nums = { 1.5f, 3.5f, 2.0f, 1.0f};
-        double avg = findAverage(nums);
-        System.out.println("Average: " + avg);
+        // float [] nums = { 1.5f, 3.5f, 2.0f, 1.0f};
+        // double avg = findAverage(nums);
+        // System.out.println("Average: " + avg);
+        /***************/
+    //     Map<String, Integer> myMap = new HashMap<>();
+    // myMap.put("a", 7);
+    // myMap.put("x", 4);
+    // myMap.put("z", 5);
+
+    // int result = countOddNumbers(myMap);
+    // System.out.println("Odd numbers count: " + result);
+    /***************/
         // After implementing a method, call it here with
         // some sample input and print the result to
         // check if it works. Fix any issues you find.
@@ -92,7 +101,13 @@ public class MidtermPractice {
      * Example: input: {"a"=7, "x"=4, "z"=5} -> output: 2
      */
     public static int countOddNumbers(Map<String, Integer> map) {
-        return -1;
+        int count = 0;
+        for(Integer value : map.values()){
+        if(value % 2 !=0){
+            count++;
+        }
+        }
+        return count;
     }
 
     /**
