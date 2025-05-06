@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -7,6 +9,9 @@ public class MidtermPractice {
         // After implementing a method, call it here with
         // some sample input and print the result to
         // check if it works. Fix any issues you find.
+        List<String> test = new ArrayList(Arrays.asList("apple", "banana", "kiwi"));
+        String longest = findLongestWord(test);
+        System.out.println(longest);
     }
 
     /**
@@ -16,8 +21,31 @@ public class MidtermPractice {
      * Example: input: ["apple", "banana", "kiwi"] -> output: "banana"
      */
     public static String findLongestWord(List<String> list) {
-        return "";
+        /*
+         loop for each varibales character amounts
+         then do some comparasion between them probably need a max varible set to 0
+         then return the exact index of the larget word
+         */
+        int longestWordSize = 0;
+        String longestWordLength = "";
+        for(int i = 0; i < list.size(); i++){
+            longestWordSize = list.get(0).length();
+            if (list.get(i).length() > longestWordSize) {
+                longestWordSize = list.get(i).length();
+                longestWordLength = list.get(i);
+            }
+        }
+
+        return longestWordLength;
     }
+    // --- Attempt 1 (No Resources, 10 min) ---
+    // Time Completed: 2:37 seconds left
+    // Notes: The actual making of the method was fine but I need to review on Arraylist istantiation because I still remebered but was too clear on it.
+
+    // --- Attempt 2 (With Resources, 10 min) ---
+    // Time Completed:
+    // Notes:
+
 
     /**
      * Counts how many words are longer than 5 characters in the keys of a Map.
