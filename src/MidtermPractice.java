@@ -12,6 +12,9 @@ public class MidtermPractice {
         List<String> test = new ArrayList(Arrays.asList("apple", "banana", "kiwi"));
         String longest = findLongestWord(test);
         System.out.println(longest);
+
+        float[] nums = {1.5f, 3.5f, 2.0f, 3.0f};
+        System.out.println(findAverage(nums));
     }
 
     /**
@@ -54,8 +57,24 @@ public class MidtermPractice {
      * Example: input: ["why"=7, "hello"=8, "brilliant"=99, "world"=15, "amazing"=17] -> output: 2
      */
     public static int countLongWords(Map<String, Integer> map) {
+        /*
+        loop through each get values and do some sort of comparison to find a specific one
+         Need some comparison > 5
+         */
+        // for (Map<String,Integer> element : map.values()) {
+        // }
         return -1;
     }
+    // --- Attempt 1 (No Resources, 10 min) ---
+    // Time Completed: Was not able to complete within the time frame
+    // Notes: I need to refresh on how to loop through a map using a loop
+
+    // --- Attempt 2 (With Resources, 10 min) ---
+    // Time Completed:
+    // Notes:
+
+
+
 
     /**
      * Finds the average of the floats in an array.
@@ -64,8 +83,30 @@ public class MidtermPractice {
      * Example: input: [1.5, 3.5, 2.0, 3.0] -> output: 2.5
      */
     public static double findAverage(float[] arr) {
-        return -1.0;
+        /*
+         loop through
+         two varibles we ned
+         sum and count do divsion of them retunr Average
+         */
+        float sum = 0;
+        int count = arr.length;
+        for (float value : arr) {
+            sum += value;
+        }
+        float Average = sum/count;
+        return Average;
     }
+
+     // --- Attempt 1 (No Resources, 10 min) ---
+    // Time Completed: 3:52 seconds left
+    // Notes: good just need to review proper float list istantiation.
+
+    // --- Attempt 2 (With Resources, 10 min) ---
+    // Time Completed:
+    // Notes:
+
+
+
 
     /**
      * Counts how many odd numbers there are in the values of a Map.
@@ -74,8 +115,23 @@ public class MidtermPractice {
      * Example: input: {"a"=7, "x"=4, "z"=5} -> output: 2
      */
     public static int countOddNumbers(Map<String, Integer> map) {
-        return -1;
+        int counter = 0;
+        // for (Map<String, Integer> value : map.keySet()) {
+        //     int currentNumber = value.get(map.keySet());
+        //     if (currentNumber % 2 != 0) {
+        //         counter++;
+        //     }
+        // }
+        return counter;
     }
+     // --- Attempt 1 (No Resources, 10 min) ---
+    // Time Completed: could not solve within the time frame
+    // Notes: I think I have the logic correct I just need to know how to properly loop through
+
+    // --- Attempt 2 (With Resources, 10 min) ---
+    // Time Completed:
+    // Notes:
+
 
     /**
      * Returns true if all values are divisible by 3 in an array.
