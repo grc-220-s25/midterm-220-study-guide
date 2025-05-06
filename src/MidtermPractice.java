@@ -34,6 +34,11 @@ public class MidtermPractice {
     // int result = countOddNumbers(myMap);
     // System.out.println("Odd numbers count: " + result);
     /***************/
+    // int[] test1 = {3, 6, 9};
+    // int[] test2 = {3, 4, 6, 9};
+    // System.out.println(allDivisibleBy3(test1));  
+    // System.out.println(allDivisibleBy3(test2));
+    /************/
         // After implementing a method, call it here with
         // some sample input and print the result to
         // check if it works. Fix any issues you find.
@@ -118,7 +123,12 @@ public class MidtermPractice {
      * Example 2: input: [3, 4, 6, 9] -> output: false
      */
     public static boolean allDivisibleBy3(int[] arr) {
-        return false;
+        for(int num : arr){
+            if(num % 3 != 0){
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
