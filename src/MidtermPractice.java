@@ -7,6 +7,10 @@ public class MidtermPractice {
         // After implementing a method, call it here with
         // some sample input and print the result to
         // check if it works. Fix any issues you find.
+
+        List<String> list = List.of("My" , "Midterm" , "SDEV220");
+        System.out.println(list);
+        System.out.println("Longest word is: " + findLongestWord(list));
     }
 
     /**
@@ -16,7 +20,15 @@ public class MidtermPractice {
      * Example: input: ["apple", "banana", "kiwi"] -> output: "banana"
      */
     public static String findLongestWord(List<String> list) {
-        return "";
+
+        String longestWord = "";
+
+        for (String word : list){
+            if (word.length() > longestWord.length()){
+                longestWord = word;
+            }
+        }
+        return longestWord;
     }
 
     /**
