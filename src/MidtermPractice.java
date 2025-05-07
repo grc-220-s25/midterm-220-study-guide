@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -7,6 +8,13 @@ public class MidtermPractice {
         // After implementing a method, call it here with
         // some sample input and print the result to
         // check if it works. Fix any issues you find.
+        List<String> list = new ArrayList<>();
+        list.add("apple");
+        list.add("banana");
+        list.add("kiwi");
+
+        String longWord = findLongestWord(list);
+        System.out.println(longWord);
     }
 
     /**
@@ -16,7 +24,13 @@ public class MidtermPractice {
      * Example: input: ["apple", "banana", "kiwi"] -> output: "banana"
      */
     public static String findLongestWord(List<String> list) {
-        return "";
+        String longWord = "";
+        for (String word : list) {
+            if (word.length() > longWord.length()) {
+                longWord = word;
+            }
+        }
+        return longWord;
     }
 
     /**
