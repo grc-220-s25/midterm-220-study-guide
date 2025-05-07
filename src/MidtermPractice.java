@@ -35,6 +35,12 @@ public class MidtermPractice {
         countOddNumbersMap.put("x", 4);
         countOddNumbersMap.put("z", 5);
         System.out.println("countOddNumbers: " + countOddNumbers(countOddNumbersMap));
+
+        int[] divBy3Arr1 = {3, 6, 9};
+        System.out.println("allDivisibleBy3: " + allDivisibleBy3(divBy3Arr1));
+
+        int[] divBy3Arr2 = {3, 4, 6, 9};
+        System.out.println("allDivisibleBy3: " + allDivisibleBy3(divBy3Arr2));
     }
 
     /**
@@ -110,7 +116,12 @@ public class MidtermPractice {
      * Example 2: input: [3, 4, 6, 9] -> output: false
      */
     public static boolean allDivisibleBy3(int[] arr) {
-        return false;
+        for (int num : arr) {
+            if (num % 3 != 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
