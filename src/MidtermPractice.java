@@ -34,6 +34,18 @@ public class MidtermPractice {
 
         System.out.println(countOddNumbers(oddNums));
 
+        int[] listNums = {3, 6, 9};
+
+        System.out.println(allDivisibleBy3(listNums));
+
+        List<String> strings = new ArrayList<>();
+        strings.add("apple");
+        strings.add("apricot");
+        strings.add("alleviate");
+        strings.add("banana");
+        
+        System.out.println(allStartWithA(strings));
+
 
 
 
@@ -120,7 +132,14 @@ public class MidtermPractice {
      * Example 2: input: [3, 4, 6, 9] -> output: false
      */
     public static boolean allDivisibleBy3(int[] arr) {
-        return false;
+        for (int num : arr){
+            if (num % 3 != 0){
+                return false;
+            }
+
+        }
+
+        return true;
     }
 
     /**
@@ -131,7 +150,13 @@ public class MidtermPractice {
      * Example: input: ["apple", "banana", "avocado"] -> output: false
      */
     public static boolean allStartWithA(List<String> list) {
-        return false;
+        for (String word : list){
+            if (word.toLowerCase().charAt(0) != 'a'){
+                return false;
+            }
+        }
+
+        return true;
     }
 
     /**
