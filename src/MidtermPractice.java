@@ -11,6 +11,16 @@ public class MidtermPractice {
         List<String> list = List.of("apple", "banana", "kiwi");
         String longestWord = findLongestWord(list);
         System.out.println(longestWord);
+
+        Map<String, Integer> mapOfWords = new HashMap<>();
+        mapOfWords.put("why",7);
+        mapOfWords.put("hello",8);
+        mapOfWords.put("brilliant",99);
+        mapOfWords.put("world",15);
+        mapOfWords.put("amazing",17);
+
+        int longWordsCount = countLongWords(mapOfWords);
+        System.out.println(longWordsCount);
     }
 
     /**
@@ -42,15 +52,37 @@ public class MidtermPractice {
     //     return maxLength;
     // }
 
-    // /**
-    //  * Counts how many words are longer than 5 characters in the keys of a Map.
-    //  * @param map a Map of strings to integers
-    //  * @return the count of words longer than 5 characters
-    //  * Example: input: ["why"=7, "hello"=8, "brilliant"=99, "world"=15, "amazing"=17] -> output: 2
-    //  */
-    // public static int countLongWords(Map<String, Integer> map) {
-    //     return -1;
-    // }
+    /**
+     * Counts how many words are longer than 5 characters in the keys of a Map.
+     * @param map a Map of strings to integers
+     * @return the count of words longer than 5 characters
+     * Example: input: ["why"=7, "hello"=8, "brilliant"=99, "world"=15, "amazing"=17] -> output: 2
+     */
+    public static int countLongWords(Map<String, Integer> mapOfWords) {
+        int count = 0;
+        for (Map.Entry<String, Integer> entry : mapOfWords.entrySet()) {
+            String key = entry.getKey();
+            if (mapOfWords.isEmpty() || mapOfWords == null) {
+                return 0;
+            }
+            if (key.length() > 5) {
+                count++;
+            } 
+        }
+        return count;
+    }
+
+/*
+// I forgot how to add values to a new HashMap and the syntax for looping through one. Also the array was not necessary. 
+//     arr[] numsArr = new arr[5];
+//     for(Map.Entry<String, Inger> entry = new Entry.Set()) {
+//         if (entry.getValue > 5) {
+//             return 0;
+//         } 
+//     }
+//     return -1;
+// }
+*/
 
     // /**
     //  * Finds the average of the floats in an array.
