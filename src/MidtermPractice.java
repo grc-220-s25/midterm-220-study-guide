@@ -25,6 +25,14 @@ public class MidtermPractice {
         float[] arr = {1.5f, 3.5f, 2.0f, 3.0f};
         System.out.println(findAverage(arr));
 
+        Map<String, Integer> map = new HashMap<>();
+        map.put("a",7);
+        map.put("x",4);
+        map.put("z",5);
+        map.put("y",13); 
+    
+        System.out.println(countOddNumbers(map));
+
 
     }
 
@@ -117,15 +125,34 @@ public class MidtermPractice {
 // }
 */
 
-    // /**
-    //  * Counts how many odd numbers there are in the values of a Map.
-    //  * @param map a HashMap of String keys and Integer values
-    //  * @return the count of odd numbers in the values
-    //  * Example: input: {"a"=7, "x"=4, "z"=5} -> output: 2
-    //  */
-    // public static int countOddNumbers(Map<String, Integer> map) {
-    //     return -1;
-    // }
+    /**
+     * Counts how many odd numbers there are in the values of a Map.
+     * @param map a HashMap of String keys and Integer values
+     * @return the count of odd numbers in the values
+     * Example: input: {"a"=7, "x"=4, "z"=5} -> output: 2
+     */
+    public static int countOddNumbers(Map<String, Integer> map) {
+        int count = 0;
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            Integer value = entry.getValue();
+            if (value % 2 != 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+/* I am trying to recall the syntax for getting values from a HashMap.'
+//     int count = 0; 
+//     for (Map.Entry<String, Integer> entry : entrySet()) {
+//     Integer value = getValue();
+//         if (value % 2 != 0) {
+//  		count++; 	
+//         }
+//     }
+//     
+//     return count;
+// }
+*/
 
     // /**
     //  * Returns true if all values are divisible by 3 in an array.
