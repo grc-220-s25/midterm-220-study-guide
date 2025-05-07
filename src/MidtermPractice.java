@@ -36,6 +36,8 @@ public class MidtermPractice {
         int[] numsArr = {3, 6, 9, 12, 15};
         System.out.println(allDivisibleBy3(numsArr));
 
+        List<String> startsWithA = List.of("apple", "apricot", "tomato", "avocado");
+        System.out.println(allStartWithA(startsWithA));
     }
 
     /**
@@ -184,17 +186,33 @@ public class MidtermPractice {
      * 
     */
 
+    /**
+     * Returns true if all words start with 'a' in an ArrayList of Strings.
+     * @param list an ArrayList of words
+     * @return true if all words start with 'a', false otherwise
+     * Example: input: ["apple", "apricot", "avocado"] -> output: true
+     * Example: input: ["apple", "banana", "avocado"] -> output: false
+     */
+    public static boolean allStartWithA(List<String> list) {
+        for (int i = 0; i < list.size(); i++) {
+            if (!list.get(i).startsWith("a")) {
+               return false;
+            }
+        }
+        return true;
+    }
 
-    // /**
-    //  * Returns true if all words start with 'a' in an ArrayList of Strings.
-    //  * @param list an ArrayList of words
-    //  * @return true if all words start with 'a', false otherwise
-    //  * Example: input: ["apple", "apricot", "avocado"] -> output: true
-    //  * Example: input: ["apple", "banana", "avocado"] -> output: false
-    //  */
-    // public static boolean allStartWithA(List<String> list) {
-    //     return false;
-    // }
+    /*
+    //  I am puzzled on how to negate the .startsWith() built in method 
+    //        for (int i = 0; i < list.size(); i++) {
+    //        char containsChar = list.get(i).startWith('a');
+    //        if (!containsChar) {
+    //           return false;  
+    //        }
+    //    }
+    //    return false;
+    }
+    */
 
     // /**
     //  * OPTIONAL MORE CHALLENGING PROBLEM
