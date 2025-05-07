@@ -39,22 +39,28 @@ public class MidtermPractice {
     // System.out.println(allDivisibleBy3(test1));  
     // System.out.println(allDivisibleBy3(test2));
     /************/
-    List<String> list1 = new ArrayList<>();
-    list1.add("apple");
-    list1.add("apricot");
-    list1.add("avocado");
+    // List<String> list1 = new ArrayList<>();
+    // list1.add("apple");
+    // list1.add("apricot");
+    // list1.add("avocado");
 
-    List<String> list2 = new ArrayList<>();
-    list2.add("apple");
-    list2.add("banana");
-    list2.add("avocado");
-    System.out.println(allStartWithA(list1));
-    System.out.println(allStartWithA(list2));
+    // List<String> list2 = new ArrayList<>();
+    // list2.add("apple");
+    // list2.add("banana");
+    // list2.add("avocado");
+    // System.out.println(allStartWithA(list1));
+    // System.out.println(allStartWithA(list2));
+    /**************/
+    int[] test1 = {1, 3, 8, 2, 1, 2, 7};   
+    int[] test2 = {1, 2, 3, 4, 5};         
 
+    System.out.println(canPartitionWithEqualSums(test1));
+    System.out.println(canPartitionWithEqualSums(test2));
+}
         // After implementing a method, call it here with
         // some sample input and print the result to
         // check if it works. Fix any issues you find.
-    }
+    
 
     /**
      * Finds the longest word in an List of Strings.
@@ -178,7 +184,14 @@ public class MidtermPractice {
      * Output: false (no contiguous split results in equal sums)
      */
     public static boolean canPartitionWithEqualSums(int[] arr) {
+        /*
+         * I will need the total sum of arry
+         *          */
+        int totalSum =0; 
+        for(int num : arr){
+            totalSum += num;
+        }
         return false;
     }
-
 }
+
