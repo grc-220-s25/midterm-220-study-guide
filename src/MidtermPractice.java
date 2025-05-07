@@ -9,12 +9,29 @@ public class MidtermPractice {
         // After implementing a method, call it here with
         // some sample input and print the result to
         // check if it works. Fix any issues you find.
-        List<String> test = new ArrayList(Arrays.asList("apple", "banana", "kiwi"));
-        String longest = findLongestWord(test);
-        System.out.println(longest);
 
-        float[] nums = {1.5f, 3.5f, 2.0f, 3.0f};
-        System.out.println(findAverage(nums));
+        // List<String> test = new ArrayList(Arrays.asList("apple", "banana", "kiwi"));
+        // String longest = findLongestWord(test);
+        // System.out.println(longest);
+
+        // float[] nums = {1.5f, 3.5f, 2.0f, 3.0f};
+        // System.out.println(findAverage(nums));
+
+        // int[] returnsTrue = {3, 6, 9};
+        // int[] returnsFalse = {3, 4, 6, 9};
+
+        // System.out.println(allDivisibleBy3(returnsTrue));
+        // System.out.println(allDivisibleBy3(returnsFalse));
+
+        // List<String> testTure = new ArrayList(Arrays.asList("apple", "apricot", "avocado"));
+        // List<String> testFlase = new ArrayList(Arrays.asList("apple", "banana", "avocado"));
+        // System.out.println(allStartWithA(testTure));
+        // System.out.println(allStartWithA(testFlase));
+
+        int[] returnsTrue = {1, 3, 8, 2, 1, 2, 7};
+        int[] returnsFalse = {1, 2, 3, 4, 5};
+        System.out.println(canPartitionWithEqualSums(returnsTrue));
+        System.out.println(canPartitionWithEqualSums(returnsFalse));
     }
 
     /**
@@ -124,7 +141,7 @@ public class MidtermPractice {
         // }
         return counter;
     }
-     // --- Attempt 1 (No Resources, 10 min) ---
+    // --- Attempt 1 (No Resources, 10 min) ---
     // Time Completed: could not solve within the time frame
     // Notes: I think I have the logic correct I just need to know how to properly loop through
 
@@ -141,8 +158,35 @@ public class MidtermPractice {
      * Example 2: input: [3, 4, 6, 9] -> output: false
      */
     public static boolean allDivisibleBy3(int[] arr) {
+        /*
+         loop through
+         modulus by 3 if statement return true or false
+         */
+        int checker = 0;
+        for(int num : arr){
+            if (num % 3 == 0) {
+                checker++;
+            } else{
+                checker = 0;
+                return false;
+            }
+        }
+        if (checker == arr.length) {
+            return true;
+        } 
         return false;
     }
+    // --- Attempt 1 (No Resources, 10 min) ---
+    // Time Completed: 1:27 seconds left
+    // Notes: It works but I think I need to clean up logic and look for this one
+
+    // --- Attempt 2 (With Resources, 10 min) ---
+    // Time Completed:
+    // Notes:
+
+
+
+
 
     /**
      * Returns true if all words start with 'a' in an ArrayList of Strings.
@@ -152,8 +196,30 @@ public class MidtermPractice {
      * Example: input: ["apple", "banana", "avocado"] -> output: false
      */
     public static boolean allStartWithA(List<String> list) {
+        /*
+         loop thorugh check for charAt(i)
+         save that to see streak
+         return true or false depending
+         */
+        int counter = 0;
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).toLowerCase().charAt(0) == 'a') {
+                counter++;
+            }
+        }
+        if (counter == list.size()) {
+            return true;
+        }
         return false;
     }
+    // --- Attempt 1 (No Resources, 10 min) ---
+    // Time Completed: 2:57 seconds left
+    // Notes: works I think I can clean up logic a bit more.
+
+    // --- Attempt 2 (With Resources, 10 min) ---
+    // Time Completed:
+    // Notes:
+    
 
     /**
      * OPTIONAL MORE CHALLENGING PROBLEM
@@ -174,7 +240,27 @@ public class MidtermPractice {
      * Output: false (no contiguous split results in equal sums)
      */
     public static boolean canPartitionWithEqualSums(int[] arr) {
+        int firstHalf = 0;
+        int secondHalf = 0;
+        int total = 0;
+        for (int i = 0; i < arr.length; i++) {
+            total += arr[i];
+        }
+        firstHalf = arr[0] + arr[1] + arr[2];
+        secondHalf = arr[3] + arr[4] + arr[5] + arr[6];
+        if (total/2 == firstHalf && total/2 == secondHalf) {
+            return true;
+        }
         return false;
     }
+
+    // --- Attempt 1 (No Resources, 10 min) ---
+    // Time Completed: completed the method but had no time to test
+    // Notes: this doe work only for check in the TRUE input, not the false our put because its out of index
+    // I know this isnt optimal because its fixed but I think I can improve it.
+
+    // --- Attempt 2 (With Resources, 10 min) ---
+    // Time Completed:
+    // Notes:
 
 }
