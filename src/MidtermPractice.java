@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -7,6 +9,50 @@ public class MidtermPractice {
         // After implementing a method, call it here with
         // some sample input and print the result to
         // check if it works. Fix any issues you find.
+        /*List<String> list = new ArrayList<>();
+        list.add("apple");
+        list.add("banana");
+        list.add("kiwi");
+
+        String longWord = findLongestWord(list);
+        System.out.println(longWord);*/
+
+        /*Map<String, Integer> map = new HashMap<>();
+        map.put("why", 7);
+        map.put("hello", 8);
+        map.put("brilliant", 99);
+        map.put("world", 15);
+        map.put("amazing", 17);
+
+        int count = countLongWords(map);
+        System.out.println(count);*/
+
+        /*float[] arr = {1.5f, 3.5f, 2.0f, 3.0f};
+        double average = findAverage(arr);
+        System.out.println(average);*/
+
+        /*Map<String, Integer> map = new HashMap<>();
+        map.put("a", 7);
+        map.put("x", 4);
+        map.put("z", 5);
+
+        int count = countOddNumbers(map);
+        System.out.println(count);*/
+
+        /*int[] numbers1 = {3, 6, 9};
+        int[] numbers2 = {3, 4, 6, 9};
+
+        System.out.println(allDivisibleBy3(numbers1));
+        System.out.println(allDivisibleBy3(numbers2));*/
+
+        List<String> list = new ArrayList<>();
+        list.add("apple");
+        list.add("apricot");
+        list.add("avocado");
+        //list.add("banana");
+
+        Boolean word = allStartWithA(list);
+        System.out.println(word);
     }
 
     /**
@@ -16,7 +62,13 @@ public class MidtermPractice {
      * Example: input: ["apple", "banana", "kiwi"] -> output: "banana"
      */
     public static String findLongestWord(List<String> list) {
-        return "";
+        String longWord = "";
+        for (String word : list) {
+            if (word.length() > longWord.length()) {
+                longWord = word;
+            }
+        }
+        return longWord;
     }
 
     /**
@@ -26,7 +78,14 @@ public class MidtermPractice {
      * Example: input: ["why"=7, "hello"=8, "brilliant"=99, "world"=15, "amazing"=17] -> output: 2
      */
     public static int countLongWords(Map<String, Integer> map) {
-        return -1;
+        // I forgot about the usage of .keySet() for this problem
+        int count = 0;
+        for (String key : map.keySet()) {
+            if (key.length() > 5) {
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
@@ -36,7 +95,11 @@ public class MidtermPractice {
      * Example: input: [1.5, 3.5, 2.0, 3.0] -> output: 2.5
      */
     public static double findAverage(float[] arr) {
-        return -1.0;
+        double sum = 0.0;
+        for (float num : arr) {
+            sum += num;
+        }
+        return sum/arr.length;
     }
 
     /**
@@ -46,7 +109,13 @@ public class MidtermPractice {
      * Example: input: {"a"=7, "x"=4, "z"=5} -> output: 2
      */
     public static int countOddNumbers(Map<String, Integer> map) {
-        return -1;
+        int count = 0;
+        for (Integer value : map.values()) {
+            if (value%2 != 0) {
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
@@ -57,7 +126,12 @@ public class MidtermPractice {
      * Example 2: input: [3, 4, 6, 9] -> output: false
      */
     public static boolean allDivisibleBy3(int[] arr) {
-        return false;
+        for (int value : arr) {
+            if (value%3 != 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
@@ -68,7 +142,12 @@ public class MidtermPractice {
      * Example: input: ["apple", "banana", "avocado"] -> output: false
      */
     public static boolean allStartWithA(List<String> list) {
-        return false;
+        for (String word : list) {
+            if (!word.startsWith("a")) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
