@@ -39,11 +39,20 @@ public class MidtermPractice {
         int count = countOddNumbers(map);
         System.out.println(count);*/
 
-        int[] numbers1 = {3, 6, 9};
+        /*int[] numbers1 = {3, 6, 9};
         int[] numbers2 = {3, 4, 6, 9};
 
         System.out.println(allDivisibleBy3(numbers1));
-        System.out.println(allDivisibleBy3(numbers2));
+        System.out.println(allDivisibleBy3(numbers2));*/
+
+        List<String> list = new ArrayList<>();
+        list.add("apple");
+        list.add("apricot");
+        list.add("avocado");
+        //list.add("banana");
+
+        Boolean word = allStartWithA(list);
+        System.out.println(word);
     }
 
     /**
@@ -133,7 +142,12 @@ public class MidtermPractice {
      * Example: input: ["apple", "banana", "avocado"] -> output: false
      */
     public static boolean allStartWithA(List<String> list) {
-        return false;
+        for (String word : list) {
+            if (!word.startsWith("a")) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
