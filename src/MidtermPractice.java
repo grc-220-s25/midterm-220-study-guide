@@ -22,6 +22,19 @@ public class MidtermPractice {
 
         System.out.println(countLongWords(countLong));
 
+        float[] floatArr = {1.5f, 3.5f, 2.0f, 3.0f};
+
+        System.out.println(findAverage(floatArr));
+
+        Map<String, Integer> oddNums = new HashMap<>();
+
+        oddNums.put("a", 7);
+        oddNums.put("x", 4);
+        oddNums.put("z", 5);
+
+        System.out.println(countOddNumbers(oddNums));
+
+
 
 
         // After implementing a method, call it here with
@@ -72,7 +85,13 @@ public class MidtermPractice {
      * Example: input: [1.5, 3.5, 2.0, 3.0] -> output: 2.5
      */
     public static double findAverage(float[] arr) {
-        return -1.0;
+        double sum = 0;
+
+        for (float num : arr){
+            sum += num;
+        }
+
+        return sum / arr.length;
     }
 
     /**
@@ -82,7 +101,15 @@ public class MidtermPractice {
      * Example: input: {"a"=7, "x"=4, "z"=5} -> output: 2
      */
     public static int countOddNumbers(Map<String, Integer> map) {
-        return -1;
+        int count = 0;
+
+        for (int num : map.values()){
+            if (num % 2 != 0){
+                count++;
+            }
+        }
+
+        return count;
     }
 
     /**
