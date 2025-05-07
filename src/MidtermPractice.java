@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -7,6 +9,56 @@ public class MidtermPractice {
         // After implementing a method, call it here with
         // some sample input and print the result to
         // check if it works. Fix any issues you find.
+        List<String> findLongestWordList = new ArrayList<>();
+        findLongestWordList.add("apple");
+        findLongestWordList.add("banana");
+        findLongestWordList.add("kiwi");
+        System.out.println("findLongestWord: " + findLongestWord(findLongestWordList));
+
+        Map<String, Integer> countLongWordsMap = new HashMap<>();
+        countLongWordsMap.put("why", 7);
+        countLongWordsMap.put("hello", 8);
+        countLongWordsMap.put("brilliant", 99);
+        countLongWordsMap.put("world", 15);
+        countLongWordsMap.put("amazing", 17);
+        System.out.println("countLongWords: " + countLongWords(countLongWordsMap));
+
+        float[] arr = new float[4];
+        arr[0] = (float) 1.5;
+        arr[1] = (float) 3.5;
+        arr[2] = (float) 2.0;
+        arr[3] = (float) 3.0;
+        System.out.println("findAverage: " + findAverage(arr));
+
+        Map<String, Integer> countOddNumbersMap = new HashMap<>();
+        countOddNumbersMap.put("a", 7);
+        countOddNumbersMap.put("x", 4);
+        countOddNumbersMap.put("z", 5);
+        System.out.println("countOddNumbers: " + countOddNumbers(countOddNumbersMap));
+
+        int[] divBy3Arr1 = {3, 6, 9};
+        System.out.println("allDivisibleBy3: " + allDivisibleBy3(divBy3Arr1));
+
+        int[] divBy3Arr2 = {3, 4, 6, 9};
+        System.out.println("allDivisibleBy3: " + allDivisibleBy3(divBy3Arr2));
+
+        List<String> allStartWithAList1 = new ArrayList<>();
+        allStartWithAList1.add("apple");
+        allStartWithAList1.add("apricot");
+        allStartWithAList1.add("avocado");
+        System.out.println("allStartWithA: " + allStartWithA(allStartWithAList1));
+
+        List<String> allStartWithAList2 = new ArrayList<>();
+        allStartWithAList2.add("apple");
+        allStartWithAList2.add("banana");
+        allStartWithAList2.add("avocado");
+        System.out.println("allStartWithA: " + allStartWithA(allStartWithAList2));
+
+        int[] canPartArr1 = {1, 3, 8, 2, 1, 2, 7};
+        System.out.println("canPartitionWithEqualSums: " + canPartitionWithEqualSums(canPartArr1));
+
+        int[] canPartArr2 = {1, 2, 3, 4, 5};
+        System.out.println("canPartitionWithEqualSums: " + canPartitionWithEqualSums(canPartArr2));
     }
 
     /**
@@ -16,7 +68,15 @@ public class MidtermPractice {
      * Example: input: ["apple", "banana", "kiwi"] -> output: "banana"
      */
     public static String findLongestWord(List<String> list) {
-        return "";
+        int numOfChar = list.get(0).length();
+        int idx = 0;
+        for (int i = 0; i < list.size(); i++) {
+            if (numOfChar < list.get(i).length()) {
+                idx = i;
+                numOfChar = list.get(i).length();
+            }
+        }
+        return list.get(idx);
     }
 
     /**
@@ -26,7 +86,13 @@ public class MidtermPractice {
      * Example: input: ["why"=7, "hello"=8, "brilliant"=99, "world"=15, "amazing"=17] -> output: 2
      */
     public static int countLongWords(Map<String, Integer> map) {
-        return -1;
+        int count = 0;
+        for (var entry : map.entrySet()) {
+            if (entry.getKey().length() > 5) {
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
@@ -36,7 +102,12 @@ public class MidtermPractice {
      * Example: input: [1.5, 3.5, 2.0, 3.0] -> output: 2.5
      */
     public static double findAverage(float[] arr) {
-        return -1.0;
+        double sum = 0;
+        double count = arr.length;
+        for (double d : arr) {
+            sum += d;
+        }
+        return sum / count;
     }
 
     /**
@@ -46,7 +117,13 @@ public class MidtermPractice {
      * Example: input: {"a"=7, "x"=4, "z"=5} -> output: 2
      */
     public static int countOddNumbers(Map<String, Integer> map) {
-        return -1;
+        int count = 0;
+        for (var entry : map.entrySet()) {
+            if (entry.getValue() % 2 == 1) {
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
@@ -57,7 +134,12 @@ public class MidtermPractice {
      * Example 2: input: [3, 4, 6, 9] -> output: false
      */
     public static boolean allDivisibleBy3(int[] arr) {
-        return false;
+        for (int num : arr) {
+            if (num % 3 != 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
@@ -68,7 +150,16 @@ public class MidtermPractice {
      * Example: input: ["apple", "banana", "avocado"] -> output: false
      */
     public static boolean allStartWithA(List<String> list) {
-        return false;
+        for (String str: list) {
+            if (list.isEmpty()) {
+                return false;
+            } else if (str.startsWith("a")) {
+                continue;
+            } else {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
@@ -90,6 +181,37 @@ public class MidtermPractice {
      * Output: false (no contiguous split results in equal sums)
      */
     public static boolean canPartitionWithEqualSums(int[] arr) {
+        if (arr.length == 0) return false;
+
+        int half = arr.length / 2;
+        int sumLeft = 0;
+        int sumRight = 0;
+        for (int i = 0; i < half; i++) {
+            sumLeft += arr[i];
+        }
+        for (int i = half; i < arr.length; i++) {
+            sumRight += arr[i];
+        }
+
+        while (sumLeft > sumRight) {
+            sumLeft -= arr[half - 1];
+            sumRight += arr[half - 1];
+            half--;
+            if (sumLeft < sumRight) return false;
+        }
+
+        while (sumLeft < sumRight) {
+            sumLeft += arr[half];
+            sumRight -= arr[half];
+            half++;
+            if (sumLeft > sumRight) return false;
+
+        }
+
+        if (sumLeft == sumRight) {
+            return true;
+        }
+
         return false;
     }
 
