@@ -11,33 +11,45 @@ public class MidtermPracticeSecondWithReasources {
         // some sample input and print the result to
         // check if it works. Fix any issues you find.
 
+        //findLongestWord
         // List<String> newStringList = new ArrayList<>(Arrays.asList("apple", "banana", "kiwi"));
         // System.out.println(findLongestWord(newStringList));;
 
+        //countLongWords
         // Map<String, Integer> wordScores = new HashMap<>();
         // wordScores.put("why", 7);
         // wordScores.put("hello", 8);
         // wordScores.put("brilliant", 99);
         // wordScores.put("world", 15);
         // wordScores.put("amazing", 17);
-
         // System.out.println(countLongWords(wordScores));
 
+        //findAverage
         // float[] floatList = {1.5f, 3.5f, 2.0f, 3.0f};
         // System.out.println(findAverage(floatList));
 
+        //countOddNumbers
         // Map<String,Integer> isOdd = new HashMap<>();
         // isOdd.put("a", 7);
         // isOdd.put("x", 4);
         // isOdd.put("z", 5);
-
         // System.out.println(countOddNumbers(isOdd));
-        int[] isDivbyThree = {3, 6, 9};
-        int[] isNotDivbyThree = {3, 4, 6, 9};
 
-        System.out.println(allDivisibleBy3(isDivbyThree));
-        System.out.println(allDivisibleBy3(isNotDivbyThree));
+        //allDivisibleBy3
+        // int[] isDivbyThree = {3, 6, 9};
+        // int[] isNotDivbyThree = {3, 4, 6, 9};
+        // System.out.println(allDivisibleBy3(isDivbyThree));
+        // System.out.println(allDivisibleBy3(isNotDivbyThree));
 
+        //allStartWithA
+        // List<String> listStringsTrue = new ArrayList<>(Arrays.asList("apple", "apricot", "avocado"));
+        // List<String> listStringsFalse = new ArrayList<>(Arrays.asList("apple", "banana", "avocado"));
+        // System.out.println(allStartWithA(listStringsTrue));;
+        // System.out.println(allStartWithA(listStringsFalse));;
+        
+        //canPartitionWithEqualSums
+        // int[] numArray = {1, 3, 8, 2, 1, 2, 7};
+        // System.out.println(canPartitionWithEqualSums(numArray));
 
     }
 
@@ -161,11 +173,17 @@ public class MidtermPracticeSecondWithReasources {
      * Example: input: ["apple", "banana", "avocado"] -> output: false
      */
     public static boolean allStartWithA(List<String> list) {
-        return false;
+        for(String word : list){
+            if (word.charAt(0) != 'a') {
+                return false;
+            }
+        }
+        return true;
     }
     // --- Attempt 2 (With Resources, 10 min) ---
-    // Time Completed:
-    // Notes:
+    // Time Completed: 6:53 seconds remaining
+    // Notes: Feeling great about this one I dont know how much more I could optimize it.
+    // Looking at this after I realized I could add a to lowercase for safety and an isEmpty() but I think for this case it works though.
 
 
 
@@ -188,11 +206,24 @@ public class MidtermPracticeSecondWithReasources {
      * Output: false (no contiguous split results in equal sums)
      */
     public static boolean canPartitionWithEqualSums(int[] arr) {
+        int half = 0;
+        for(int num: arr){
+            half += num;
+        }
+        half = half/2;
+
+        for(int i =0; i< arr.length; i++){
+            int temp = 0;
+            while (temp != half) {
+                temp += arr[i];
+                return true;
+            }
+        }
         return false;
     }
     // --- Attempt 2 (With Resources, 10 min) ---
-    // Time Completed:
-    // Notes:
+    // Time Completed: ran out of time.
+    // Notes: I think I have some decent logic here but I feel that I am missing something I dont know yet to solve this.
 
 
     
