@@ -1,13 +1,66 @@
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class MidtermPractice {
 
     public static void main(String[] args) {
+        // List<String> word = new ArrayList<>();
+        // word.add("Banna");
+        // word.add("Orange");
+        // word.add("Mangooooooo");
+        // String result = findLongestWord(word);
+        // System.out.println("The Longest word is " + result);
+        /**************/
+        // Map<String, Integer> myMap= new HashMap<>();
+        // myMap.put("why", 7);
+        // myMap.put("hello",8);
+        // myMap.put("Kingston",10);
+        // myMap.put("Amazing",99);
+        // myMap.put("Education",25);
+        // int result = countLongWords(myMap);
+        // System.out.println("Words longer than 5 letters " + result );
+        /***************/
+        // float [] nums = { 1.5f, 3.5f, 2.0f, 1.0f};
+        // double avg = findAverage(nums);
+        // System.out.println("Average: " + avg);
+        /***************/
+    //     Map<String, Integer> myMap = new HashMap<>();
+    // myMap.put("a", 7);
+    // myMap.put("x", 4);
+    // myMap.put("z", 5);
+
+    // int result = countOddNumbers(myMap);
+    // System.out.println("Odd numbers count: " + result);
+    /***************/
+    // int[] test1 = {3, 6, 9};
+    // int[] test2 = {3, 4, 6, 9};
+    // System.out.println(allDivisibleBy3(test1));  
+    // System.out.println(allDivisibleBy3(test2));
+    /************/
+    // List<String> list1 = new ArrayList<>();
+    // list1.add("apple");
+    // list1.add("apricot");
+    // list1.add("avocado");
+
+    // List<String> list2 = new ArrayList<>();
+    // list2.add("apple");
+    // list2.add("banana");
+    // list2.add("avocado");
+    // System.out.println(allStartWithA(list1));
+    // System.out.println(allStartWithA(list2));
+    /**************/
+    int[] test1 = {1, 3, 8, 2, 1, 2, 7};   
+    int[] test2 = {1, 2, 3, 4, 5};         
+
+    System.out.println(canPartitionWithEqualSums(test1));
+    System.out.println(canPartitionWithEqualSums(test2));
+}
         // After implementing a method, call it here with
         // some sample input and print the result to
         // check if it works. Fix any issues you find.
-    }
+    
 
     /**
      * Finds the longest word in an List of Strings.
@@ -16,7 +69,16 @@ public class MidtermPractice {
      * Example: input: ["apple", "banana", "kiwi"] -> output: "banana"
      */
     public static String findLongestWord(List<String> list) {
+       if (list == null || list.isEmpty()){
         return "";
+       }
+       String Longest = list.get(0);
+       for(String word : list){
+        if (word.length() > Longest.length()){
+            Longest = word;
+        }
+       }
+       return Longest;
     }
 
     /**
@@ -26,7 +88,12 @@ public class MidtermPractice {
      * Example: input: ["why"=7, "hello"=8, "brilliant"=99, "world"=15, "amazing"=17] -> output: 2
      */
     public static int countLongWords(Map<String, Integer> map) {
-        return -1;
+       int count = 0; 
+       for(String word : map.keySet()){
+        if(word.length()>5){
+            count++;
+        }
+       }return count;
     }
 
     /**
@@ -36,8 +103,19 @@ public class MidtermPractice {
      * Example: input: [1.5, 3.5, 2.0, 3.0] -> output: 2.5
      */
     public static double findAverage(float[] arr) {
-        return -1.0;
+        if (arr == null || arr.length == 0){
+        return 0.0;  
+    } 
+    float sum = 0;
+
+    for(float num : arr){
+        sum += num;
     }
+    return sum / arr.length;
+
+}
+    
+
 
     /**
      * Counts how many odd numbers there are in the values of a Map.
@@ -46,7 +124,13 @@ public class MidtermPractice {
      * Example: input: {"a"=7, "x"=4, "z"=5} -> output: 2
      */
     public static int countOddNumbers(Map<String, Integer> map) {
-        return -1;
+        int count = 0;
+        for(Integer value : map.values()){
+        if(value % 2 !=0){
+            count++;
+        }
+        }
+        return count;
     }
 
     /**
@@ -57,7 +141,12 @@ public class MidtermPractice {
      * Example 2: input: [3, 4, 6, 9] -> output: false
      */
     public static boolean allDivisibleBy3(int[] arr) {
-        return false;
+        for(int num : arr){
+            if(num % 3 != 0){
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
@@ -68,7 +157,12 @@ public class MidtermPractice {
      * Example: input: ["apple", "banana", "avocado"] -> output: false
      */
     public static boolean allStartWithA(List<String> list) {
-        return false;
+        for(String word : list){
+            if(!word.startsWith("a")){
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
@@ -90,7 +184,14 @@ public class MidtermPractice {
      * Output: false (no contiguous split results in equal sums)
      */
     public static boolean canPartitionWithEqualSums(int[] arr) {
+        /*
+         * I will need the total sum of arry
+         *          */
+        int totalSum =0; 
+        for(int num : arr){
+            totalSum += num;
+        }
         return false;
     }
-
 }
+
