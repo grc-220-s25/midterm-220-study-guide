@@ -62,9 +62,7 @@ public class MidtermPractice {
     // Time Completed: 2:37 seconds left
     // Notes: The actual making of the method was fine but I need to review on Arraylist istantiation because I still remebered but was too clear on it.
 
-    // --- Attempt 2 (With Resources, 10 min) ---
-    // Time Completed:
-    // Notes:
+   
 
 
     /**
@@ -86,9 +84,7 @@ public class MidtermPractice {
     // Time Completed: Was not able to complete within the time frame
     // Notes: I need to refresh on how to loop through a map using a loop
 
-    // --- Attempt 2 (With Resources, 10 min) ---
-    // Time Completed:
-    // Notes:
+   
 
 
 
@@ -118,9 +114,7 @@ public class MidtermPractice {
     // Time Completed: 3:52 seconds left
     // Notes: good just need to review proper float list istantiation.
 
-    // --- Attempt 2 (With Resources, 10 min) ---
-    // Time Completed:
-    // Notes:
+   
 
 
 
@@ -145,9 +139,7 @@ public class MidtermPractice {
     // Time Completed: could not solve within the time frame
     // Notes: I think I have the logic correct I just need to know how to properly loop through
 
-    // --- Attempt 2 (With Resources, 10 min) ---
-    // Time Completed:
-    // Notes:
+   
 
 
     /**
@@ -180,9 +172,7 @@ public class MidtermPractice {
     // Time Completed: 1:27 seconds left
     // Notes: It works but I think I need to clean up logic and look for this one
 
-    // --- Attempt 2 (With Resources, 10 min) ---
-    // Time Completed:
-    // Notes:
+   
 
 
 
@@ -216,9 +206,7 @@ public class MidtermPractice {
     // Time Completed: 2:57 seconds left
     // Notes: works I think I can clean up logic a bit more.
 
-    // --- Attempt 2 (With Resources, 10 min) ---
-    // Time Completed:
-    // Notes:
+   
     
 
     /**
@@ -259,8 +247,6 @@ public class MidtermPractice {
     // Notes: this doe work only for check in the TRUE input, not the false our put because its out of index
     // I know this isnt optimal because its fixed but I think I can improve it.
 
-    // --- Attempt 2 (With Resources, 10 min) ---
-    // Time Completed:
-    // Notes:
+   
 
 }
