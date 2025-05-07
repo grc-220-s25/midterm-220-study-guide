@@ -33,6 +33,8 @@ public class MidtermPractice {
     
         System.out.println(countOddNumbers(map));
 
+        int[] numsArr = {3, 6, 9, 12, 15};
+        System.out.println(allDivisibleBy3(numsArr));
 
     }
 
@@ -141,7 +143,7 @@ public class MidtermPractice {
         }
         return count;
     }
-/* I am trying to recall the syntax for getting values from a HashMap.'
+/* I am trying to recall the syntax for getting values from a HashMap.
 //     int count = 0; 
 //     for (Map.Entry<String, Integer> entry : entrySet()) {
 //     Integer value = getValue();
@@ -154,16 +156,34 @@ public class MidtermPractice {
 // }
 */
 
-    // /**
-    //  * Returns true if all values are divisible by 3 in an array.
-    //  * @param arr an array of integers
-    //  * @return true if all values are divisible by 3, false otherwise
-    //  * Example: input: [3, 6, 9] -> output: true
-    //  * Example 2: input: [3, 4, 6, 9] -> output: false
-    //  */
-    // public static boolean allDivisibleBy3(int[] arr) {
-    //     return false;
-    // }
+    /**
+     * Returns true if all values are divisible by 3 in an array.
+     * @param arr an array of integers
+     * @return true if all values are divisible by 3, false otherwise
+     * Example: input: [3, 6, 9] -> output: true
+     * Example 2: input: [3, 4, 6, 9] -> output: false
+     */
+    public static boolean allDivisibleBy3(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % 3 != 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    /*
+    // Not sure how to stop the loop from returning true before the iteration of the loop is completed.  
+    //    for (int i = 0; i < arr.length; i++) {
+    //        if (arr[i] % 3 == 0) {
+    //            return true;
+    //        }
+    //    }
+    //    return false;
+    }    
+     * 
+    */
+
 
     // /**
     //  * Returns true if all words start with 'a' in an ArrayList of Strings.
