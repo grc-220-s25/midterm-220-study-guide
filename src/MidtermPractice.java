@@ -54,6 +54,11 @@ public class MidtermPractice {
         allStartWithAList2.add("avocado");
         System.out.println("allStartWithA: " + allStartWithA(allStartWithAList2));
 
+        int[] canPartArr1 = {1, 3, 8, 2, 1, 2, 7};
+        System.out.println("canPartitionWithEqualSums: " + canPartitionWithEqualSums(canPartArr1));
+
+        int[] canPartArr2 = {1, 2, 3, 4, 5};
+        System.out.println("canPartitionWithEqualSums: " + canPartitionWithEqualSums(canPartArr2));
     }
 
     /**
@@ -176,6 +181,37 @@ public class MidtermPractice {
      * Output: false (no contiguous split results in equal sums)
      */
     public static boolean canPartitionWithEqualSums(int[] arr) {
+        if (arr.length == 0) return false;
+
+        int half = arr.length / 2;
+        int sumLeft = 0;
+        int sumRight = 0;
+        for (int i = 0; i < half; i++) {
+            sumLeft += arr[i];
+        }
+        for (int i = half; i < arr.length; i++) {
+            sumRight += arr[i];
+        }
+
+        while (sumLeft > sumRight) {
+            sumLeft -= arr[half - 1];
+            sumRight += arr[half - 1];
+            half--;
+            if (sumLeft < sumRight) return false;
+        }
+
+        while (sumLeft < sumRight) {
+            sumLeft += arr[half];
+            sumRight -= arr[half];
+            half++;
+            if (sumLeft > sumRight) return false;
+
+        }
+
+        if (sumLeft == sumRight) {
+            return true;
+        }
+
         return false;
     }
 
