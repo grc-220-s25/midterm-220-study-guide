@@ -27,9 +27,17 @@ public class MidtermPractice {
         int count = countLongWords(map);
         System.out.println(count);*/
 
-        float[] arr = {1.5f, 3.5f, 2.0f, 3.0f};
+        /*float[] arr = {1.5f, 3.5f, 2.0f, 3.0f};
         double average = findAverage(arr);
-        System.out.println(average);
+        System.out.println(average);*/
+
+        Map<String, Integer> map = new HashMap<>();
+        map.put("a", 7);
+        map.put("x", 4);
+        map.put("z", 5);
+
+        int count = countOddNumbers(map);
+        System.out.println(count);
     }
 
     /**
@@ -86,7 +94,13 @@ public class MidtermPractice {
      * Example: input: {"a"=7, "x"=4, "z"=5} -> output: 2
      */
     public static int countOddNumbers(Map<String, Integer> map) {
-        return -1;
+        int count = 0;
+        for (Integer value : map.values()) {
+            if (value%2 != 0) {
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
