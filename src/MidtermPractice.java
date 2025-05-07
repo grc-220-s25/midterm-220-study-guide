@@ -23,14 +23,14 @@ public class MidtermPractice {
      * Example: input: ["apple", "banana", "kiwi"] -> output: "banana"
      */
     public static String findLongestWord(List<String> list) {
-        String longestString = list.get(0);
+        String currentString = list.get(0);
         for(int i = 1; i < list.size(); i++) {
-            if(list.get(i).length() > longestString.length()) {
-                longestString = list.get(i);
+            if(list.get(i).length() > currentString.length()) {
+                currentString = list.get(i);
             }
 
         }
-        return longestString;
+        return currentString;
     }
 
     /**
@@ -136,7 +136,8 @@ public class MidtermPractice {
     }
 
     /*-----Pratice Problems-----*/
-    public static String findShortestWord(List<String> list) {
+
+   /* public static String findShortestWord(List<String> list) {
         // You can write your code here!
         String currentString = list.get(0);
         for(int i = 0; i < list.size(); i++) {
@@ -146,7 +147,7 @@ public class MidtermPractice {
             }
         }
         return currentString;
-    }
+    } */
     public static int countWordsStartingWithVowel(List<String> list) {
         // You can write your code here!
         int count = 0;
@@ -158,6 +159,41 @@ public class MidtermPractice {
         }
         return count;
     }
-    
+    public static String findShortestWord(List<String> list) {
+        // You can write your code here!
+        String currentStr = list.get(0);
+        for(int i = 0; i < list.size(); i++) {
+            String currentShortStr = list.get(i);
+            if(currentShortStr.length() < currentStr.length()) {
+                currentStr = currentShortStr;
+            }
+        }
 
+        return currentStr;
+    }
+    public static String findLongestUppercaseWord(List<String> list) {
+        // You can write your code here!
+        String longestStrUpperCase = "";
+        for(int i = 0; i < list.size(); i++) {
+            String curreString = list.get(i);
+            if(curreString.equals(curreString.toUpperCase()) && curreString.length() > longestStrUpperCase.length()) {
+                longestStrUpperCase = curreString;
+            }
+            
+        }
+        return longestStrUpperCase;
+    }
+    public static int countShortKeysHighValues(Map<String, Integer> map) {
+        // Your code here
+        int count = 0;
+        for(String string : map.keySet()) {
+            if((string.length()) == 3) || ((string.length()) < 3 && map.get(string) >= 100)) {
+             count++;
+            }
+        return count;
+        }
+    }
 }
+
+
+    
