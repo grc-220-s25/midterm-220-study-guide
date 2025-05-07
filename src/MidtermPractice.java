@@ -46,6 +46,10 @@ public class MidtermPractice {
         
         System.out.println(allStartWithA(strings));
 
+        int[] numList = {1, 2, 3, 4, 5};
+
+        System.out.println("canPartition?: " + canPartitionWithEqualSums(numList));
+
 
 
 
@@ -178,7 +182,31 @@ public class MidtermPractice {
      * Output: false (no contiguous split results in equal sums)
      */
     public static boolean canPartitionWithEqualSums(int[] arr) {
-        return false;
+        //create heaps maybe?
+        //Or two int variables and if either one is the small one, that's who gets to consume another number?
+
+        //create two pointers, one for beginning and one for end
+        int start = 1;
+        int end = arr.length - 2;
+
+        //gotta createa two sums to compare later
+        //their values start with the beginning number, and endNum has the end number as initial value
+        int startNum = arr[0];
+        int endNum = arr[arr.length - 1];
+
+        while (start <= end){
+
+            if (startNum < endNum){
+                startNum += arr[start];
+                start++;
+            } else if (endNum < startNum){
+                endNum += arr[end];
+                end--;
+            }
+        }
+
+        //System.out.println(startNum + ", " + endNum);
+        return startNum == endNum;
     }
 
 }
