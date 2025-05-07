@@ -29,6 +29,12 @@ public class MidtermPractice {
         arr[2] = (float) 2.0;
         arr[3] = (float) 3.0;
         System.out.println("findAverage: " + findAverage(arr));
+
+        Map<String, Integer> countOddNumbersMap = new HashMap<>();
+        countOddNumbersMap.put("a", 7);
+        countOddNumbersMap.put("x", 4);
+        countOddNumbersMap.put("z", 5);
+        System.out.println("countOddNumbers: " + countOddNumbers(countOddNumbersMap));
     }
 
     /**
@@ -87,7 +93,13 @@ public class MidtermPractice {
      * Example: input: {"a"=7, "x"=4, "z"=5} -> output: 2
      */
     public static int countOddNumbers(Map<String, Integer> map) {
-        return -1;
+        int count = 0;
+        for (var entry : map.entrySet()) {
+            if (entry.getValue() % 2 == 1) {
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
