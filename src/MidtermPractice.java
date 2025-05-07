@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -8,13 +9,23 @@ public class MidtermPractice {
         // After implementing a method, call it here with
         // some sample input and print the result to
         // check if it works. Fix any issues you find.
-        List<String> list = new ArrayList<>();
+        /*List<String> list = new ArrayList<>();
         list.add("apple");
         list.add("banana");
         list.add("kiwi");
 
         String longWord = findLongestWord(list);
-        System.out.println(longWord);
+        System.out.println(longWord);*/
+
+        /*Map<String, Integer> map = new HashMap<>();
+        map.put("why", 7);
+        map.put("hello", 8);
+        map.put("brilliant", 99);
+        map.put("world", 15);
+        map.put("amazing", 17);
+
+        int count = countLongWords(map);
+        System.out.println(count);*/
     }
 
     /**
@@ -40,7 +51,14 @@ public class MidtermPractice {
      * Example: input: ["why"=7, "hello"=8, "brilliant"=99, "world"=15, "amazing"=17] -> output: 2
      */
     public static int countLongWords(Map<String, Integer> map) {
-        return -1;
+        // I forgot about the usage of .keySet() for this problem
+        int count = 0;
+        for (String key : map.keySet()) {
+            if (key.length() > 5) {
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
