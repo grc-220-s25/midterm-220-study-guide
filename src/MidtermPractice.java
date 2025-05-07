@@ -31,13 +31,19 @@ public class MidtermPractice {
         double average = findAverage(arr);
         System.out.println(average);*/
 
-        Map<String, Integer> map = new HashMap<>();
+        /*Map<String, Integer> map = new HashMap<>();
         map.put("a", 7);
         map.put("x", 4);
         map.put("z", 5);
 
         int count = countOddNumbers(map);
-        System.out.println(count);
+        System.out.println(count);*/
+
+        int[] numbers1 = {3, 6, 9};
+        int[] numbers2 = {3, 4, 6, 9};
+
+        System.out.println(allDivisibleBy3(numbers1));
+        System.out.println(allDivisibleBy3(numbers2));
     }
 
     /**
@@ -111,7 +117,12 @@ public class MidtermPractice {
      * Example 2: input: [3, 4, 6, 9] -> output: false
      */
     public static boolean allDivisibleBy3(int[] arr) {
-        return false;
+        for (int value : arr) {
+            if (value%3 != 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
