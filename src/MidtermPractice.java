@@ -21,6 +21,11 @@ public class MidtermPractice {
 
         int longWordsCount = countLongWords(mapOfWords);
         System.out.println(longWordsCount);
+
+        float[] arr = {1.5f, 3.5f, 2.0f, 3.0f};
+        System.out.println(findAverage(arr));
+
+
     }
 
     /**
@@ -84,15 +89,33 @@ public class MidtermPractice {
 // }
 */
 
-    // /**
-    //  * Finds the average of the floats in an array.
-    //  * @param arr an array of floats
-    //  * @return the average of the values
-    //  * Example: input: [1.5, 3.5, 2.0, 3.0] -> output: 2.5
-    //  */
-    // public static double findAverage(float[] arr) {
-    //     return -1.0;
-    // }
+    /**
+     * Finds the average of the floats in an array.
+     * @param arr an array of floats
+     * @return the average of the values
+     * Example: input: [1.5, 3.5, 2.0, 3.0] -> output: 2.5
+     */
+    public static double findAverage(float[] arr) {
+        float sum = 0.0f;
+        for (int i = 0; i < arr.length; i++) {
+                sum += arr[i];
+        }
+     double average = sum / arr.length;
+     return average;
+    }
+
+/* I forgot the float notation and how to convert a float to a double data type.
+//      
+//     float sum = 0.0;
+//     for (int i = 0; i < arr.length; i++) {
+//         if (i > sum) {
+//             sum += i;
+//         }
+//     }
+//     double average = sum / arr.length;
+//     return average;
+// }
+*/
 
     // /**
     //  * Counts how many odd numbers there are in the values of a Map.
