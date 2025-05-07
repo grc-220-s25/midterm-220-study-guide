@@ -41,6 +41,19 @@ public class MidtermPractice {
 
         int[] divBy3Arr2 = {3, 4, 6, 9};
         System.out.println("allDivisibleBy3: " + allDivisibleBy3(divBy3Arr2));
+
+        List<String> allStartWithAList1 = new ArrayList<>();
+        allStartWithAList1.add("apple");
+        allStartWithAList1.add("apricot");
+        allStartWithAList1.add("avocado");
+        System.out.println("allStartWithA: " + allStartWithA(allStartWithAList1));
+
+        List<String> allStartWithAList2 = new ArrayList<>();
+        allStartWithAList2.add("apple");
+        allStartWithAList2.add("banana");
+        allStartWithAList2.add("avocado");
+        System.out.println("allStartWithA: " + allStartWithA(allStartWithAList2));
+
     }
 
     /**
@@ -132,7 +145,16 @@ public class MidtermPractice {
      * Example: input: ["apple", "banana", "avocado"] -> output: false
      */
     public static boolean allStartWithA(List<String> list) {
-        return false;
+        for (String str: list) {
+            if (list.isEmpty()) {
+                return false;
+            } else if (str.startsWith("a")) {
+                continue;
+            } else {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
