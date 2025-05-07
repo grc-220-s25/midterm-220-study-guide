@@ -1,12 +1,16 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-public class MidtermPracticeSecond {
+public class MidtermPracticeSecondWithReasources {
 
     public static void main(String[] args) {
         // After implementing a method, call it here with
         // some sample input and print the result to
         // check if it works. Fix any issues you find.
+        List<String> newStringList = new ArrayList<>(Arrays.asList("apple", "banana", "kiwi"));
+        System.out.println(findLongestWord(newStringList));;
     }
 
     /**
@@ -16,11 +20,19 @@ public class MidtermPracticeSecond {
      * Example: input: ["apple", "banana", "kiwi"] -> output: "banana"
      */
     public static String findLongestWord(List<String> list) {
-        return "";
+        String longestWord = "";
+        int max = 0;
+        for(String word : list){
+            if (max < word.length()) {
+                max = word.length();
+                longestWord = word;
+            }
+        }
+        return longestWord;
     }
      // --- Attempt 2 (With Resources, 10 min) ---
-    // Time Completed:
-    // Notes:
+    // Time Completed: 5:19 seconds left
+    // Notes: I understood this well I think there is some optimization stil that I saw after I completed it.
 
 
 
