@@ -1,3 +1,5 @@
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -7,6 +9,30 @@ public class MidtermPractice {
         // After implementing a method, call it here with
         // some sample input and print the result to
         // check if it works. Fix any issues you find.
+        
+        // i forgot how to make a list to store the strings
+        List<String> words =Arrays.asList ("apple", "banana", "kiwi");
+        System.out.println(findLongestWord(words));
+
+        Map<String, Integer> keyWord = new HashMap<>();
+        keyWord.put("why",7);
+        keyWord.put("hello",8);
+        keyWord.put("brilliant",99);
+        keyWord.put("world",15);
+        keyWord.put("amazing",17);
+        int answer =countLongWords(keyWord);
+        System.out.println(answer);
+
+     
+        System.out.println(findAverage(new float[] {1.5f, 3.5f, 2.0f, 3.0f}));
+ 
+        Map<String, Integer> testMap = new HashMap<>();
+        testMap.put("a",7);
+        testMap.put("x",4);
+        testMap.put("z",5);
+        System.out.println(countOddNumbers(testMap));
+
+
     }
 
     /**
@@ -16,7 +42,15 @@ public class MidtermPractice {
      * Example: input: ["apple", "banana", "kiwi"] -> output: "banana"
      */
     public static String findLongestWord(List<String> list) {
-        return "";
+
+        String longest = "";
+        
+        for (String word : list) {
+            if(word.length()> longest.length()){
+                longest = word;
+            }
+        }
+        return longest;
     }
 
     /**
@@ -26,7 +60,14 @@ public class MidtermPractice {
      * Example: input: ["why"=7, "hello"=8, "brilliant"=99, "world"=15, "amazing"=17] -> output: 2
      */
     public static int countLongWords(Map<String, Integer> map) {
-        return -1;
+        int count = 0;
+        
+        for (String key : map.keySet()){
+            if (key.length() > 5){
+                count ++;
+            }
+        }
+        return count;
     }
 
     /**
@@ -35,8 +76,15 @@ public class MidtermPractice {
      * @return the average of the values
      * Example: input: [1.5, 3.5, 2.0, 3.0] -> output: 2.5
      */
+    // i had trouble with the floats and double 
     public static double findAverage(float[] arr) {
-        return -1.0;
+        double total = 0;
+
+        for(float each: arr){
+            total+= each;
+        
+        }
+        return total/arr.length;
     }
 
     /**
@@ -46,7 +94,14 @@ public class MidtermPractice {
      * Example: input: {"a"=7, "x"=4, "z"=5} -> output: 2
      */
     public static int countOddNumbers(Map<String, Integer> map) {
-        return -1;
+        int count = 0;
+        
+        for (Integer num : map.values()){
+            if(num % 2 != 0){
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
@@ -56,8 +111,15 @@ public class MidtermPractice {
      * Example: input: [3, 6, 9] -> output: true
      * Example 2: input: [3, 4, 6, 9] -> output: false
      */
-    public static boolean allDivisibleBy3(int[] arr) {
-        return false;
+    
+    // i had trouble with returning ture logic was worng 
+     public static boolean allDivisibleBy3(int[] arr) {
+        for(int num : arr){
+            if (num % 3 != 0){
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
@@ -68,7 +130,12 @@ public class MidtermPractice {
      * Example: input: ["apple", "banana", "avocado"] -> output: false
      */
     public static boolean allStartWithA(List<String> list) {
-        return false;
+        for(int i =0; i< list.size(); i++){
+            if (list.get(0) != "a"){
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
