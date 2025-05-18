@@ -32,6 +32,10 @@ public class MidtermPractice {
         testMap.put("z",5);
         System.out.println(countOddNumbers(testMap));
 
+        int[] arr = {1, 2, 3, 4, 5};
+        System.out.println(canPartitionWithEqualSums(arr));
+
+
 
     }
 
@@ -129,9 +133,11 @@ public class MidtermPractice {
      * Example: input: ["apple", "apricot", "avocado"] -> output: true
      * Example: input: ["apple", "banana", "avocado"] -> output: false
      */
+    
+    // didnt do this one right i was trying index the first letter. re-doing it.
     public static boolean allStartWithA(List<String> list) {
-        for(int i =0; i< list.size(); i++){
-            if (list.get(0) != "a"){
+        for(String word : list){
+            if (!word.contains("a")){
                 return false;
             }
         }
@@ -156,8 +162,22 @@ public class MidtermPractice {
      * Input: [1, 2, 3, 4, 5]
      * Output: false (no contiguous split results in equal sums)
      */
+
+    // didnt know how to figure out how to contiguous split the arry 
     public static boolean canPartitionWithEqualSums(int[] arr) {
+        int total = 0;
+
+        for (int eachNum : arr){
+            total +=eachNum;
+        }
+
+        int leftSide = 0;
+        for(int i = 0 ; i <arr.length -1; i++){
+            leftSide+= arr[i];
+            int rightSide = total-leftSide;
+
+            if (rightSide== leftSide) return true;
+        }
         return false;
     }
-
 }
